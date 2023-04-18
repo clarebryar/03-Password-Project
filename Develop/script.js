@@ -16,6 +16,7 @@ var upperAlph = smallAlph.toUpperCase();
 var smallAlphSelect = [Math.floor(Math.random() * smallAlph.length)];
 var upperAlphSelect = [Math.floor(Math.random() * upperAlph)] 
 
+var potentialChar = []
 var passwordText = document.querySelector("#password");
 passwordText.value = password;
 
@@ -35,31 +36,33 @@ function writePassword() {
       }
     }
   
-
-  window.alert(
-    "Your password must contain one of the following character types: lowercase, uppercase, numeric, and/or special characters, answer yes or no to the following questions for which character type(s) should be included in the password"
-  );
-
-  var uppercase = window.prompt(
+  var uppercase = window.confirm(
     "Should the password contain an uppercase character?"
   );
-  if (uppercase == "yes") {
-    uppercase = "includeuppercase";
-    console.log("include uppercase");
-  }
+  if (uppercase == true) {
+    potentialChar.concat(upperAlphSelect);
+    console.log(uppercase);
+    }
+    
+  
 
-  var numeric = window.prompt("Should the password contain a number?");
-  if (numeric == "yes") {
-    numeric = "includenumeric";
+  var numeric = window.confirm("Should the password contain a number?");
+  if (numeric == true ) {
+   potentialChar.concat(numericSelect);
     console.log("include number");
   }
 
-  var characters = window.prompt(
+  var characters = window.confirm(
     "Should the password contain a special character?"
   );
-  if (characters == "yes") console.log("include special character");
-  characters = "includecharacters";
+  if (characters == true) {
+    potentialChar.concat(characterSelect);
+    console.log("include special character");
+  }
+  
+ 
   var password = generatePassword();
+  
   function generatePassword() {
    for (var i = 0; i < passwordLength; i * passwordLength);
   }
