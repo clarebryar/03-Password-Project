@@ -17,8 +17,7 @@ var smallAlphSelect = [Math.floor(Math.random() * smallAlph.length)];
 var upperAlphSelect = [Math.floor(Math.random() * upperAlph)] 
 
 var potentialChar = []
-var passwordText = document.querySelector("#password");
-passwordText.value = password;
+
 
 // Write password to the #password input
 
@@ -61,9 +60,17 @@ function writePassword() {
   }
   
  
-  var password = generatePassword();
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
+  passwordText.value = password;
   
   function generatePassword() {
-   for (var i = 0; i < passwordLength; i * passwordLength);
+   for (var i = 0; i < passwordLength.length; passwordLength++);
+   console.log(i);
+   return potentialChar
+//How do we get the values of uppercase, numeric and password to be evaluated here too? 
+
   }
+
+  
 }
