@@ -9,4 +9,4 @@ When clicking the Generate Password button, the user will be able to select the 
 
 ![Password Project Page](./Assets/Password-project-screenshot.png)
 
-Link to Deployed Page: 
+Link to Deployed Page: https://clarebryar.github.io/03-Password-Project/
